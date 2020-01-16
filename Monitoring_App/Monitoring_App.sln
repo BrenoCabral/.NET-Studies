@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29311.281
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitoring_App", "Monitoring_App\Monitoring_App.csproj", "{BE552BB8-3E46-4D61-AF92-F1DDB5732C33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringTest", "MonitoringTest\MonitoringTest.csproj", "{CD552C54-5D3D-40B3-BD9E-8051D96042D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE552BB8-3E46-4D61-AF92-F1DDB5732C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE552BB8-3E46-4D61-AF92-F1DDB5732C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE552BB8-3E46-4D61-AF92-F1DDB5732C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE552BB8-3E46-4D61-AF92-F1DDB5732C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD552C54-5D3D-40B3-BD9E-8051D96042D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD552C54-5D3D-40B3-BD9E-8051D96042D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD552C54-5D3D-40B3-BD9E-8051D96042D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD552C54-5D3D-40B3-BD9E-8051D96042D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D8FFAF7-9A06-4EDF-9EF9-C5A092FF5757}
+	EndGlobalSection
+EndGlobal
