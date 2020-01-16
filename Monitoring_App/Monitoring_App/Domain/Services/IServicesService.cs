@@ -8,5 +8,8 @@ namespace Monitoring_App.Domain.Services
     public interface IServicesService
     {
         List<Service> GetAll();
+        Task Create(Service service);
+        Task Delete(int id);
+        Task Edit(Service service);
     }
 }

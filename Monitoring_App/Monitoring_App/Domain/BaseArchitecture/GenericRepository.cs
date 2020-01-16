@@ -40,7 +40,7 @@ namespace Monitoring_App.Domain.BaseArchitecture
                 .FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task Update(int id, TEntity entity)
+        public async Task Update(TEntity entity)
         {
             _dbContext.Set<TEntity>().Update(entity);
             await _dbContext.SaveChangesAsync();

@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Monitoring_App.Domain.Factories;
 using Monitoring_App.Domain.Services;
 using Npgsql;
 
@@ -31,6 +32,7 @@ namespace Monitoring_App
             services.AddControllers();
             ConfigureEntity(services);
             SetDependencyInjection(services);
+            ServiceTypeFactory.InitiateTypes();
         }
 
         public void SetDependencyInjection(IServiceCollection services)
@@ -56,7 +58,6 @@ namespace Monitoring_App
             {
                 endpoints.MapControllers();
             });
-            
         }
         private void ConfigureEntity(IServiceCollection services)
         {

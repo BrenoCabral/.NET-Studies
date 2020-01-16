@@ -19,8 +19,10 @@ namespace Monitoring_App.Domain.Requests
                 IState serviceState = ServiceTypeFactory.Create(service.TypeDescription).GetState(service.CommunicationEndpoint, service.VersionEndpoint);
                 serviceViewModel = service;
                 serviceViewModel.State = serviceState;
+                serviceViewModels.Add(serviceViewModel);
             }
-            
+
+            return serviceViewModels;
         }
     }
 }

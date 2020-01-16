@@ -23,17 +23,12 @@ namespace Monitoring_App.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok();
-        }
-        [HttpGet]
-        public IActionResult GetServicesState()
+        public List<ServiceViewModel> GetServicesState()
         {
             List<Service> services = _servicesService.GetAll();
             List<ServiceViewModel> serviceViewModels = RequestService.GetStatus(services);
             
-            return Ok();
+            return serviceViewModels;
         }
     }
 }

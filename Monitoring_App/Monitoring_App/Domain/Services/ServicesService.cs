@@ -19,5 +19,18 @@ namespace Monitoring_App.Domain.Services
         {
             return _servicesRepository.GetAll().ToList();
         }
+
+        public async Task Create(Service service)
+        {
+            await _servicesRepository.Create(service);
+        }
+        public async Task Delete(int id)
+        {
+            await _servicesRepository.Delete(id);
+        }
+        public async Task Edit(Service service)
+        {
+            await _servicesRepository.Update(service);
+        }
     }
 }

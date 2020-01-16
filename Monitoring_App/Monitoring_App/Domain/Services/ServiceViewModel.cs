@@ -33,14 +33,23 @@ namespace Monitoring_App.Domain.Services
             serviceViewModel.CommunicationEndpoint = service.CommunicationEndpoint;
             serviceViewModel.Enviromment = GetEnumFromString<EnvirommentEnum>(service.Enviromment);
             serviceViewModel.CompanyCell = GetEnumFromString<CompanyCellEnum>(service.CompanyCell);
-            
+            serviceViewModel.Cloud = service.Cloud;
+
             return serviceViewModel;
         }
 
         private static T GetEnumFromString<T>(string enumString)
         {
-            T myEnum = (T) Enum.Parse(typeof(T), enumString);
-            return myEnum;
+            try
+            {
+                T myEnum = (T)Enum.Parse(typeof(T), enumString);
+                return myEnum;
+            }catch(Exception e)
+            {
+                Console.WriteLine("An error acurred when converting string to ENUM. Error:" + e.Message);
+                throw e;
+            }
+            
         }
     }
 }
