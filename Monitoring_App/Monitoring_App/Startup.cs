@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Monitoring_App.Domain.Factories;
 using Monitoring_App.Domain.Services;
+using Monitoring_App.Domain.Services.Types;
 using Npgsql;
 
 namespace Monitoring_App
@@ -24,6 +25,8 @@ namespace Monitoring_App
             Configuration = configuration;
         }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -32,7 +35,16 @@ namespace Monitoring_App
             services.AddControllers();
             ConfigureEntity(services);
             SetDependencyInjection(services);
-            ServiceTypeFactory.InitiateTypes();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:8082");
+                });
+            });
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
         public void SetDependencyInjection(IServiceCollection services)
@@ -48,6 +60,8 @@ namespace Monitoring_App
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -58,6 +72,8 @@ namespace Monitoring_App
             {
                 endpoints.MapControllers();
             });
+            API api = new API();
+            ServiceTypeFactory.InitiateTypes();
         }
         private void ConfigureEntity(IServiceCollection services)
         {

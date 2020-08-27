@@ -1401,13 +1401,13 @@
           "lib/netcoreapp3.0/Npgsql.dll": {}
         }
       },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/3.0.0": {
+      "Npgsql.EntityFrameworkCore.PostgreSQL/3.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.0.0",
           "Microsoft.EntityFrameworkCore.Abstractions": "3.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "3.0.0",
-          "Npgsql": "4.1.0"
+          "Npgsql": "4.1.1"
         },
         "compile": {
           "lib/netstandard2.1/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
@@ -3648,10 +3648,11 @@
           "MongoDB.Bson": "2.10.0",
           "MongoDB.Driver": "2.10.0",
           "Npgsql": "4.1.2",
-          "Npgsql.EntityFrameworkCore.PostgreSql": "3.0.0",
+          "Npgsql.EntityFrameworkCore.PostgreSql": "3.0.1",
           "Oracle.ManagedDataAccess.Core": "2.19.60",
           "RabbitMQ.Client": "6.0.0-rc1",
-          "StackExchange.Redis": "2.0.601"
+          "StackExchange.Redis": "2.0.601",
+          "System.Collections.Concurrent": "4.3.0"
         },
         "compile": {
           "bin/placeholder/Monitoring_App.dll": {}
@@ -5531,16 +5532,16 @@
         "postgresql.png"
       ]
     },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/3.0.0": {
-      "sha512": "BrWVUVq9+J3Cn6txwulwlDfPweKwXIlHXUEdHGXhn8zZULwF/HljPOuSXBNitJhTJmEi0gSK5kIyb5jHUEV1kg==",
+    "Npgsql.EntityFrameworkCore.PostgreSQL/3.0.1": {
+      "sha512": "eaPyTwh8udaOJLCUe95EKuSehxEmzw7FAY2ZRk7djfvSC89cUiuVYByyn4D1mJCYK6O892O3V6w7n6zlelIQEQ==",
       "type": "package",
-      "path": "npgsql.entityframeworkcore.postgresql/3.0.0",
+      "path": "npgsql.entityframeworkcore.postgresql/3.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.1/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
         "lib/netstandard2.1/Npgsql.EntityFrameworkCore.PostgreSQL.pdb",
-        "npgsql.entityframeworkcore.postgresql.3.0.0.nupkg.sha512",
+        "npgsql.entityframeworkcore.postgresql.3.0.1.nupkg.sha512",
         "npgsql.entityframeworkcore.postgresql.nuspec"
       ]
     },
@@ -10935,7 +10936,7 @@
       "Microsoft.EntityFrameworkCore.InMemory >= 3.0.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "Monitoring_App >= 1.0.0",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 3.0.0",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 3.0.1",
       "coverlet.collector >= 1.0.1",
       "xunit >= 2.4.0",
       "xunit.runner.visualstudio >= 2.4.0"
@@ -11002,7 +11003,7 @@
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
-            "version": "[3.0.0, )"
+            "version": "[3.0.1, )"
           },
           "coverlet.collector": {
             "target": "Package",

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitoring_App", "Monitorin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitoringTest", "MonitoringTest\MonitoringTest.csproj", "{CD552C54-5D3D-40B3-BD9E-8051D96042D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTestMonitoringApp", "IntegrationTestMonitoringApp\IntegrationTestMonitoringApp.csproj", "{11FFD62B-81EA-48E4-ABB7-DA08F13F95B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringIntegrationTest", "IntegrationTestMonitoringApp\MonitoringIntegrationTest.csproj", "{11FFD62B-81EA-48E4-ABB7-DA08F13F95B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

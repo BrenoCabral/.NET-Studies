@@ -14,8 +14,6 @@ C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcore
 C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcoreapp3.0\MonitoringTest.dll
 C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcoreapp3.0\MonitoringTest.pdb
 C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Razor.Language.dll
-C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcoreapp3.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcoreapp3.0\Microsoft.Bcl.HashCode.dll
 C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.dll
 C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.dll
 C:\MaximaSistemas\monitoring-app\Monitoring_App\MonitoringTest\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll

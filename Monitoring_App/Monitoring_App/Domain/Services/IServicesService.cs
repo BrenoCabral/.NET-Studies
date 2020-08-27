@@ -9,7 +9,9 @@ namespace Monitoring_App.Domain.Services
     {
         List<Service> GetAll();
         Task Create(Service service);
+        Task CreateMultiple(List<Service> entity);
         Task Delete(int id);
         Task Edit(Service service);
+        Task<Service> GetById(int id);
     }
 }

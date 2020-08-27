@@ -22,4 +22,5 @@ namespace Monitoring_App.Domain.Services
         public string CompanyCell { get; set; }
         public string Cloud { get; set; }
     }
+
 }

@@ -16,14 +16,30 @@ namespace Monitoring_App.Domain.Factories
         private static List<Type> Types;
         public static IServiceType Create(string type)
         {
-            IServiceType serviceType = (IServiceType)Activator.CreateInstance(ObtenhaImplementacao(type));
-            return serviceType;
+            try
+            {
+                IServiceType serviceType = (IServiceType)Activator.CreateInstance(ObtenhaImplementacao(type));
+                return serviceType;
+            }
+            catch(Exception e)
+            {
+                throw new Exception("O tipo passado não existe.");
+            }
+            
         }
         private static Type ObtenhaImplementacao(string type)
         {
-            return Types.Where(x => x.IsSubclassOf(typeof(IServiceType)))
+            try
+            {
+                Type typeFound = Types.Where(x => x.GetInterfaces().Contains(typeof(IServiceType)))
                         .Where(x => x.Name.Equals(type, StringComparison.InvariantCultureIgnoreCase)).
                         FirstOrDefault();
+                return typeFound;
+            }
+            catch
+            {
+                throw new Exception("Implementação não foi encontrada.");
+            }
         }
 
         private static List<Type> CreateTypes()

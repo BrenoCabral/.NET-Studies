@@ -10,6 +10,7 @@ namespace Monitoring_App.Domain.BaseArchitecture
         IQueryable<TEntity> GetAll();
         Task<TEntity> GetById(int id);
         Task Create(TEntity entity);
+        Task CreateMultiple(List<TEntity> entity);
         Task Update(TEntity entity);
         Task Delete(int id);
     }

@@ -19,20 +19,17 @@ namespace Monitoring_App.Controllers
         {
             _servicesService = servicesService;
         }
+        [HttpGet]
+        [Route("GetAll")]
         public List<Service> GetAll()
         {
             return _servicesService.GetAll();
         }
-
-        // GET: Service/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
+        
         // GET: Service/Create
         [HttpPost]
-        public async Task<ActionResult> CreateAsync(Service service)
+        [Route("CreateService")]
+        public async Task<ActionResult> CreateAsync([FromBody]Service service)
         {
             try
             {
@@ -41,53 +38,49 @@ namespace Monitoring_App.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest("\nThere was a problema while attempting to save the service. Error: " + e.Message);
+                return BadRequest("\nThere was a problem while attempting to save the service. Error: " + e.Message);
             }
 
         }
 
         // POST: Service/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Route("CreateListOfService")]
         public async Task<ActionResult> CreateAsync(List<Service> services)
         {
-            List<string> servicesWithError = new List<string>();
             try
             {
-                await Task.Run(
-                    () =>
-                    {
-                        foreach (var service in services)
-                        {
-                            if (!CreateAsync(service).IsCompletedSuccessfully)
-                            {
-                                servicesWithError.Add(service.Name);
-                            }
-                        }
-                        if (servicesWithError.Any()) throw new Exception();
-                    }
-                );
+                await _servicesService.CreateMultiple(services);
                 return Ok();
             }
-            catch
+            catch (Exception e)
             {
-                string errorsList = string.Join(',', servicesWithError);
-                return BadRequest("The following services could not be created: " + errorsList);
+                return BadRequest("An error occurred when creating multiple services. Error: " + e.Message);
             }
         }
 
         // GET: Service/Edit/5
-        public ActionResult Edit(Service service)
+        [HttpGet]
+        [Route("GetById/{id}")]
+        public async Task<Service> GetById(int id)
+        {
+            Service service = await _servicesService.GetById(id);
+            return service;
+        }
+        [HttpPost]
+        [Route("Edit")]
+        public ActionResult Edit([FromBody]Service service)
         {
             _servicesService.Edit(service);
-            return View();
+            return Ok();
         }
 
+        [Route("Delete/{id}")]
         // GET: Service/Delete/5
         public ActionResult Delete(int id)
         {
             _servicesService.Delete(id);
-            return View();
+            return Ok();
         }
 
     }

@@ -23,12 +23,19 @@ namespace Monitoring_App.Controllers
         }
 
         [HttpGet]
+        [Route("GetServicesStates")]
         public List<ServiceViewModel> GetServicesState()
         {
-            List<Service> services = _servicesService.GetAll();
-            List<ServiceViewModel> serviceViewModels = RequestService.GetStatus(services);
+            try{
+                List<Service> services = _servicesService.GetAll();
+                List<ServiceViewModel> serviceViewModels = RequestService.GetStatus(services);
+
+                return serviceViewModels;
+            }catch(Exception e)
+            {
+                throw new Exception("There was a problem while getting the services with the states. Error: " + e.Message);
+            }
             
-            return serviceViewModels;
         }
     }
 }

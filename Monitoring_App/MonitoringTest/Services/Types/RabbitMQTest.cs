@@ -19,16 +19,16 @@ namespace MonitoringTest.Services
         [Test]
         public void IsOnlineTrue()
         {
-            rabbitMQ.GetState("amqp://zarsynha:qIJywNpw9ZACJ_jFWvesD71mntWp4v_w@rhino.rmq.cloudamqp.com/zarsynha", "");
+            State stateTested = (State)rabbitMQ.GetState("amqp://zarsynha:qIJywNpw9ZACJ_jFWvesD71mntWp4v_w@rhino.rmq.cloudamqp.com/zarsynha", "");
 
-            Assert.IsTrue(rabbitMQ.IsOnline());
+            Assert.IsTrue(stateTested.IsOnline);
         }
         [Test]
         public void IsOnlineFalse()
         {
-            rabbitMQ.GetState("amqp://zarsynha:qIJywNpw9ZACJ_jFWvesD71mntWp4v_w@rhino.rmqq.cloudamqp.com/zarsynha", "");
+            State stateTested = (State)rabbitMQ.GetState("amqp://zarsynha:qIJywNpw9ZACJ_jFWvesD71mntWp4v_w@rhino.rmqq.cloudamqp.com/zarsynha", "");
 
-            Assert.IsFalse(rabbitMQ.IsOnline());
+            Assert.IsFalse(stateTested.IsOnline);
         }
         [Test]
         public void GetStateOnline()
@@ -48,16 +48,16 @@ namespace MonitoringTest.Services
         [Test]
         public void GetVersionRight()
         {
-            rabbitMQ.GetState("amqp://zarsynha:qIJywNpw9ZACJ_jFWvesD71mntWp4v_w@rhino.rmq.cloudamqp.com/zarsynha", "");
-            Assert.AreEqual("3.6.16", rabbitMQ.GetVersion());
+            State stateTested = (State)rabbitMQ.GetState("amqp://zarsynha:qIJywNpw9ZACJ_jFWvesD71mntWp4v_w@rhino.rmq.cloudamqp.com/zarsynha", "");
+            Assert.AreEqual("3.6.16", stateTested.Version);
         }
 
         [Test]
         public void GetVersionWrong()
         {
-            rabbitMQ.GetState("amqp://zarsynha:qIJywNpw9ZACJ_jFWvesD71mntWp4v_w@rhino.rmqq.cloudamqp.com/zarsynha", "");
+            State stateTested = (State)rabbitMQ.GetState("amqp://zarsynha:qIJywNpw9ZACJ_jFWvesD71mntWp4v_w@rhino.rmqq.cloudamqp.com/zarsynha", "");
 
-            Assert.AreEqual("Version not found.", rabbitMQ.GetVersion());
+            Assert.AreEqual("Version not found.", stateTested.Version);
         }
     }
 }

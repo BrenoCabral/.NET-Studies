@@ -137,3 +137,4 @@ C:\MaximaSistemas\monitoring-app\Monitoring_App\Monitoring_App\bin\Debug\netcore
 C:\MaximaSistemas\monitoring-app\Monitoring_App\Monitoring_App\bin\Debug\netcoreapp3.0\System.Diagnostics.PerformanceCounter.dll
 C:\MaximaSistemas\monitoring-app\Monitoring_App\Monitoring_App\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 C:\MaximaSistemas\monitoring-app\Monitoring_App\Monitoring_App\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\MaximaSistemas\monitoring-app\Monitoring_App\Monitoring_App\obj\Debug\netcoreapp3.0\Monitoring_App.MvcApplicationPartsAssemblyInfo.cache

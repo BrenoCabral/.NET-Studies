@@ -20,6 +20,11 @@ namespace Monitoring_App.Domain.BaseArchitecture
             await _dbContext.Set<TEntity>().AddAsync(entity);
             await _dbContext.SaveChangesAsync();
         }
+        public async Task CreateMultiple(List<TEntity> entity)
+        {
+            _dbContext.Set<TEntity>().AddRange(entity);
+            await _dbContext.SaveChangesAsync();
+        }
 
         public async Task Delete(int id)
         {
